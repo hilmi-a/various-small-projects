@@ -5,7 +5,7 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
         var buttonInnerHTML = this.innerHTML;
         
         playSound(buttonInnerHTML);
-
+        animButton(buttonInnerHTML);
     });
 }
 
@@ -16,7 +16,8 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
         //var buttonInnerHTML = event.key;
         
         playSound(event.key);
-
+        animButton(event.key);
+        
     });
 
 
@@ -56,4 +57,11 @@ switch (buttonInnerHTML) {
     default:
         break;
 }
+}
+
+function animButton(input) {
+    document.querySelector("."+input).classList.add("pressed");
+    setTimeout(function () {
+        document.querySelector("."+input).classList.remove("pressed");
+    },100);
 }
