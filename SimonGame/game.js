@@ -22,7 +22,7 @@ $(document).keydown(function () {
 
 
 function nextSequence() {
-    userClickedPattern = [];
+    //userClickedPattern = [];
     level++;
     $("#level-title").text("Level " + level);
     
@@ -85,5 +85,6 @@ function checkAnswer(currentLevel) {
 function startOver(){
     level = 0;
     gamePattern = [];
+    userClickedPattern = [];
     started = false;
 }
